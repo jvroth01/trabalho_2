@@ -1,0 +1,55 @@
+import time
+
+i = 0
+y = 0
+pilha = []
+start = time.time()
+
+while i <= 9999999:       # adciona a pilha os valores e soma os mesmos
+    i = i + 1
+    pilha.append(i)
+    y = y + i
+
+z = 999999
+while z < 999999:        # percorre a pilha no sentido contrario
+    z = z - 1
+    pilha[z]
+
+end = time.time()
+
+print("Soma dos valores = ",y)
+print(end - start, "segundos")
+
+print("---Digite a opcao desejada---")
+print("1 - Escrever valor na pilha")
+print("2 - Remover o valor na pilha")
+print("3 - Buscar valores na pilha")
+
+opcao = int(input())
+
+if opcao == 1:
+    print("Qual valor deseja adcionar a pilha? ")
+    valor = int(input())
+    pilha.append(valor)
+    print(pilha)
+elif opcao == 2:
+    print("Qual valor deseja remover da pilha? ")
+    valor = int(input())
+    for i in range (len(pilha)):
+        if pilha[i] == valor:
+            while len(pilha) > i:
+                pilha.pop()
+            break
+        else:
+            i = i + 1
+    print(pilha)
+elif opcao == 3:
+    print("Qual valor deseja buscar na lista?")
+    valor = int(input())
+    for i in range (len(pilha)):
+        i = i + 1
+        if pilha[i] == valor:
+            print("O valor esta em " , "pilha[",i,"]")
+            break
+        else:
+            i = i + 1
